@@ -43,8 +43,8 @@ class METADATA(Structure):
                 ("names", POINTER(c_char_p))]
 
 
-from config import ROOT_DIR
-lib = CDLL(ROOT_DIR + "/libs/darknet/libdarknet.so", RTLD_GLOBAL)
+from config import ROOT_PATH
+lib = CDLL(ROOT_PATH + "/libs/darknet/libdarknet.so", RTLD_GLOBAL)
 # lib = CDLL("libdarknet.so", RTLD_GLOBAL)
 lib.network_width.argtypes = [c_void_p]
 lib.network_width.restype = c_int
